@@ -36,11 +36,12 @@ La reseloución de este ejercicio se encuentra en el archivo: <b>TP1-AAII-2C-202
 
 <b>Ejercicio 2:</b>
 
-Este ejercicio cuenta con tres scripts que se encuentra dentro de la carpeta <b>TP-1-EJ2</b>:
+El objetivo de este ejercicio es implementar un sistema de clasificación de gestos de "piedra", "papel" o "tijeras" utilizando MediaPipe para la detección de las manos y una red neuronal densa para realizar la clasificación. 
 
-- record-dataset.py
-- rock-paper-scissors.py
-- train-gesture-classifier.py
+Este ejercicio cuenta con tres scripts que se encuentran dentro de la carpeta <b>TP-1-EJ2</b>. Se detalla a continuación la función que cumple cada uno:
+- record-dataset.py: permitirá grabar un dataset de gestos utilizando la cámara web y MediaPipe para detectar los landmarks (puntos clave) de la mano. Cada gesto se etiquetará como "piedra" (0), "papel" (1) o "tijeras" (2) y se almacenará junto con sus coordenadas en archivos .npy.
+- rock-paper-scissors.py: se entrenará una red neuronal densa utilizando los datos de los landmarks obtenidos en la primera parte. El modelo resultante será capaz de clasificar los gestos basándose en las posiciones de los puntos clave de la mano.
+- train-gesture-classifier.py tomará como entrada la imagen de la cámara web, utilizará MediaPipe para detectar los landmarks de la mano, y clasificará el gesto en "piedra", "papel" o "tijeras" utilizando el modelo entrenado.
 
 Además dentro de dicha carpeta se encuentra la carpeta <b>Imágenes ejercicio 2</b> que contiene imágenes donde se muestra el funcionamiento del sistema.
 
