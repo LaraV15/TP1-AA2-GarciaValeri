@@ -2,6 +2,7 @@ import cv2
 import mediapipe as mp
 import numpy as np
 from tensorflow.keras.models import load_model
+import os
 
 # Cargar el modelo entrenado
 model = load_model('rps_model.h5')
@@ -36,17 +37,20 @@ with mp_hands.Hands(static_image_mode=False, max_num_hands=1,
                 # Dibujar los landmarks en la imagen
                 mp_drawing.draw_landmarks(frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
 
-                # Obtener las coordenadas (x, y) y aplanarlas
-                landmarks = np.array([(lm.x, lm.y) for lm in hand_landmarks.landmark]).flatten()
+                # Obtener las coordenadas (x, y) solamente
+                coordenadas = [(landmark.x, landmark.y) for landmark in hand_landmarks.landmark]
 
-                # Asegurarse de que la entrada sea de tamaño (1, 42) para el modelo
-                input_data = np.expand_dims(landmarks, axis=0)
+                # Convertir a numpy array y aplanar
+                input_data = np.array(coordenadas).flatten()
+
+                # Asegurarse de que la entrada sea de tamaño (1, 42) para el modelo (21 puntos con 2 coordenadas cada uno)
+                input_data = np.expand_dims(input_data, axis=0)
 
                 # Predecir el gesto
                 prediction = model.predict(input_data)
                 class_id = np.argmax(prediction)
                 gesture = GESTURE_NAMES[class_id]
-
+                print(prediction)
                 # Mostrar el gesto reconocido en la pantalla
                 cv2.putText(frame, f"Gesto: {gesture}", (10, 50), 
                             cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2, cv2.LINE_AA)
@@ -55,7 +59,7 @@ with mp_hands.Hands(static_image_mode=False, max_num_hands=1,
         cv2.imshow('Rock-Paper-Scissors', frame)
 
         # Salir con la tecla 'q'
-        if cv2.waitKey(1) & 0xFF == ord('q'):
+        if key == ord('q'):
             break
 
 # Liberar recursos

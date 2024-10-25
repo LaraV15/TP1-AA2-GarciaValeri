@@ -29,14 +29,24 @@ El dataset proporcionado incluye las siguientes variables para cada estudiante:
 - Sleep Hours: El número promedio de horas de sueño que el estudiante tuvo por día.
 - Sample Question Papers Practiced: El número de cuestionarios de muestra que el estudiante practicó.
   Además, el dataset incluye la variable objetivo:
-- Performance Index: Un índice que representa el rendimiento académico general de cada estudiante, redondeado al entero más cercano. 
-Este índice varía de 10 a 100, donde valores más altos indican un mejor rendimiento.
+- Performance Index: Un índice que representa el rendimiento académico general de cada estudiante, redondeado al entero más cercano.
+  Este índice varía de 10 a 100, donde valores más altos indican un mejor rendimiento.
+
+La reseloución de este ejercicio se encuentra en el archivo: <b>TP1-AAII-2C-2024-EJ1</b>. El dataset correspondiente se encuentra en el archivo <b>Student_Performance.csv</b>
 
 <b>Ejercicio 2:</b>
 
+Este ejercicio cuenta con tres scripts que se encuentra dentro de la carpeta <b>TP-1-EJ2</b>:
+
+- record-dataset.py
+- rock-paper-scissors.py
+- train-gesture-classifier.py
+
+Además dentro de dicha carpeta se encuentra la carpeta <b>Imágenes ejercicio 2</b> que contiene imágenes donde se muestra el funcionamiento del sistema.
+
 <b>Ejercicio 3:</b>
-El objetivo de este problema es construir y comparar el rendimiento de distintos modelos de clasificación de imágenes utilizando redes 
-neuronales convolucionales y densas que puedan clasificar con precisión las imágenes de escenas naturales de las seis categorías 
+El objetivo de este problema es construir y comparar el rendimiento de distintos modelos de clasificación de imágenes utilizando redes
+neuronales convolucionales y densas que puedan clasificar con precisión las imágenes de escenas naturales de las seis categorías
 distintas, utilizando el dataset proporcionado.
 
 El dataset proporcionado contiene alrededor de 25,000 imágenes de tamaño 150x150, distribuidas en seis categorías:
@@ -58,3 +68,5 @@ Los modelos que diseñamos en este ejercicio son:
 - Modelo con capas convolucionales y densas.
 - Modelo que incluya bloques residuales identidad
 - Modelo que utilice como backbone alguna de las arquitecturas disponibles en TensorFlow (transfer learning) --> Implementamos MobileNet
+
+La reseloución de este ejercicio se encuentra en el archivo: <b>TP1-AAII-2C-2024-EJ3</b>. En la carpeta <b>TP-1-EJ3</b> se encuentran los dataset proporcionados para realiazar el mismo
