@@ -32,7 +32,7 @@ El dataset proporcionado incluye las siguientes variables para cada estudiante:
 - Performance Index: Un índice que representa el rendimiento académico general de cada estudiante, redondeado al entero más cercano.
   Este índice varía de 10 a 100, donde valores más altos indican un mejor rendimiento.
 
-La reseloución de este ejercicio se encuentra en el archivo: <b>TP1-AAII-2C-2024-EJ1</b>. El dataset correspondiente se encuentra en el archivo <b>Student_Performance.csv</b>
+La resolución de este ejercicio se encuentra en el archivo: <b>TP1-AAII-2C-2024-EJ1</b>. El dataset correspondiente se encuentra en el archivo <b>Student_Performance.csv</b>
 
 <b>Ejercicio 2:</b>
 
